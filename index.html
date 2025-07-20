@@ -3,7 +3,82 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <!-- タイトル -->
+    <title>404</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&family=Zen+Tokyo+Zoo&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background: #F9F2E4;
+            text-align: center;
+            max-width: 1440px;
+            margin: 0;
+            padding: 0;
+            font-family: "Yu Gothic", "Meiryo", "Hiragino Kaku Gothic ProN", Arial, sans-serif;
+        }
+
+        /* 404レコードゾーン */
+        .vinyl-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px 0px 0px;
+            margin-bottom: -50px;
+        }
+
+        .vinyl {
+            width: 300px;
+            margin: 0px 24px;
+        }
+
+        .vinyl-wrap .four {
+            font-size: 300px;
+            font-family: 'Noto Serif JP', 'Times New Roman', Times, serif;
+            color: #2E2E2E;
+            font-weight: 500;
+            transform: translateY(-100px)
+        }
+
+        /* NOT FOUND */
+
+        .pnf-wrap {
+            position: relative;
+            display: inline-block;
+            margin: 30px auto 0 auto;
+        }
+
+        .pnf-text {
+            font-size: 56px;
+            font-family: 'Zen Tokyo Zoo', cursive;
+            color: #2E2E2E;
+            letter-spacing: 0.02em;
+        }
+
+        .namake-abs {
+            position: absolute;
+            width: 100px;
+            right: 70px;
+            top: -40px;
+        }
+    </style>
 </head>
+
+<body>
+    <div class="vinyl-wrap">
+        <span class="four">4</span>
+        <img src="img/vinyl.png" alt="レコード" class="vinyl">
+        <span class="four">4</span>
+    </div>
+    <div class="pnf-wrap">
+        <span class="pnf-text">PAGE NOT FOUND</span>
+        <img src="img/namake.svg" alt="ナマケモノ" class="namake-abs">
+    </div>
+</body>
 
 </html>
