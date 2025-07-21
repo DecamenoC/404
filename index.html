@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- タイトル -->
     <title>404</title>
     <!-- Google Fonts -->
@@ -24,23 +25,29 @@
         }
 
         /* 404レコードゾーン */
+
+        .wrap-404 {
+            width: 100%;
+            margin: 0 auto;
+            max-width: 1440px;
+        }
+
         .vinyl-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 100px 0px 0px;
-            margin-bottom: -50px;
+            margin: 100px 0px -100px 0px;
             user-select: none;
         }
 
         .vinyl-center {
             display: inline-block;
             position: relative;
+            width: clamp(200px, 50%, 350px);
         }
 
         .vinyl {
-            width: 300px;
-            margin: 0px 24px;
+            width: 100%;
         }
 
         .play-btn {
@@ -48,18 +55,26 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
+            width: 40%;
+            height: auto;
             cursor: pointer;
         }
 
 
         .vinyl-wrap .four {
-            font-size: 300px;
+            font-size: 350px;
             font-family: 'Noto Serif JP', 'Times New Roman', Times, serif;
             color: #2E2E2E;
             font-weight: 500;
-            transform: translateY(-100px);
+            transform: translateY(-120px);
+        }
+
+        .vinyl-wrap .four-l {
+            margin: 0 30px 0 0;
+        }
+
+        .vinyl-wrap .four-r {
+            margin: 0 0 0 30px;
         }
 
         /* レコードアニメーション */
@@ -98,23 +113,70 @@
             top: -40px;
             user-select: none;
         }
+
+        @media (max-width: 600px) {
+
+            .vinyl-wrap {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10vh 0 0 0;
+                user-select: none;
+            }
+
+            .vinyl-center {
+                display: inline-block;
+                position: relative;
+                width: clamp(50px, 50%, 300px);
+            }
+
+            .vinyl-wrap .four {
+                font-size: 39vw;
+                margin: 1vw 0px;
+                font-family: 'Noto Serif JP', 'Times New Roman', Times, serif;
+                color: #2E2E2E;
+                font-weight: 500;
+                transform: translateY(-2vh);
+            }
+
+            .vinyl {
+                width: 38vw;
+                margin: 0 4vw;
+            }
+
+            .pnf-text {
+                font-size: 8vw;
+            }
+
+            .namake-abs {
+                width: 18vw;
+                right: 2vw;
+                top: -8vw;
+            }
+        }
     </style>
 </head>
 
+<!-- html -->
+
 <body>
-    <div class="vinyl-wrap">
-        <span class="four">4</span>
-        <div class="vinyl-center">
-            <img src="img/vinyl.png" alt="レコード" class="vinyl" draggable="false">
-            <img src="img/play.svg" alt="再生" class="play-btn">
+    <div class="wrap-404">
+        <div class="vinyl-wrap">
+            <span class="four four-l">4</span>
+            <div class="vinyl-center">
+                <img src="img/vinyl.png" alt="レコード" class="vinyl" draggable="false">
+                <img src="img/play.svg" alt="再生" class="play-btn">
+            </div>
+            <span class="four four-r">4</span>
         </div>
-        <span class="four">4</span>
-    </div>
-    <div class="pnf-wrap">
-        <h1 class="pnf-text">PAGE NOT FOUND</h1>
-        <img src="img/namake.svg" alt="ナマケモノ" class="namake-abs" draggable="false">
+        <div class="pnf-wrap">
+            <h1 class="pnf-text">PAGE NOT FOUND</h1>
+            <img src="img/namake.svg" alt="ナマケモノ" class="namake-abs" draggable="false">
+        </div>
     </div>
     <audio id="audio404" src="sound/four oh four.mp3"></audio>
+
+    <!-- html終わり -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
