@@ -117,6 +117,7 @@
             user-select: none;
         }
 
+        /* レスポンシブ */
         @media (max-width: 600px) {
 
             .vinyl-wrap {
@@ -155,6 +156,28 @@
                 width: 18vw;
                 right: 2vw;
                 top: -8vw;
+            }
+
+            .lyric-wrap .lyric-text {
+                display: none;
+                margin: 10px auto;
+                width: 90vw;
+                max-width: 320px;
+                color: #2E2E2E;
+                font-size: 1rem;
+                line-height: 1.2;
+                background: #fff6;
+                padding: 18px 8vw;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            .lyric-text .lyric-title {
+                margin: 10px 0px;
+                font-size: 1.5rem;
+                text-align: center;
             }
         }
 
@@ -324,7 +347,7 @@
                 Lyric
             </a>
             <div class="lyric-text" style="">
-                <div class="lyric-title">- 404 Song -</div>
+                <div class="lyric-title">404</div>
                 <p>
                     Four oh four, four oh four<br>
                     Four oh four, four oh four<br>
