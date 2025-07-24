@@ -157,6 +157,144 @@
                 top: -8vw;
             }
         }
+
+        /* 歌詞ボタンテストゾーン */
+
+        .lyric-wrap {
+            margin-top: 1rem;
+        }
+
+        .lyric-wrap a {
+            display: inline-block;
+            position: relative;
+            margin: 0 auto;
+            color: #505050;
+            padding: 10px 20px;
+            font-size: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            box-shadow: 0 20px 150px rgba(114, 109, 109, 0.5);
+            background: #fffaef;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+
+        .lyric-wrap a:before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            width: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lyric-wrap a span:nth-child(1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #F9F2E4, #dbd8d1);
+            animation: animate1 linear 3.2s infinite;
+        }
+
+        @keyframes animate1 {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+
+        .lyric-wrap a span:nth-child(2) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #F9F2E4, #dbd8d1);
+            animation: animate2 linear 3.2s infinite;
+        }
+
+        @keyframes animate2 {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+
+        .lyric-wrap a span:nth-child(3) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to left, #F9F2E4, #dbd8d1);
+            animation: animate3 linear 3.2s infinite;
+        }
+
+        @keyframes animate3 {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .lyric-wrap a span:nth-child(4) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to top, #F9F2E4, #dbd8d1);
+            animation: animate4 linear 3.2s infinite;
+        }
+
+        @keyframes animate4 {
+            0% {
+                transform: translateY(100%);
+            }
+
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        /* 歌詞ポップ */
+
+        .lyric-wrap .lyric-text {
+            display: none;
+            margin: 24px auto 24px auto;
+            max-width: 380px;
+            color: #2E2E2E;
+            font-size: 1rem;
+            line-height: 1.2;
+            background: #fff6;
+            padding: 18px 24px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+            text-align: center;
+            /* ←中央揃え */
+        }
+
+        .lyric-text .lyric-title {
+            margin: 10px 0px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -175,6 +313,64 @@
         <div class="pnf-wrap">
             <h1 class="pnf-text">PAGE NOT FOUND</h1>
             <img src="img/namake.svg" alt="ナマケモノ" class="namake-abs" draggable="false">
+        </div>
+
+        <div class="lyric-wrap">
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Lyric
+            </a>
+            <div class="lyric-text" style="">
+                <div class="lyric-title">- 404 Song -</div>
+                <p>
+                    Four oh four, four oh four<br>
+                    Four oh four, four oh four<br>
+                    Four oh four, four oh four<br>
+                    This page cannot be found<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    There’s nothing here, nothing more<br>
+                    Four oh four, four oh four<br>
+                    Now you hear a 404 song<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    You found a song, but not the page<br>
+                    Four oh four, four oh four<br>
+                    There’s nothing here, nothing more<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    Pages lost on this digital shore<br>
+                    Four oh four, four oh four<br>
+                    Enjoy this 404 encore<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    What are we searching for?<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    Where are we supposed to go?<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    Where are we supposed to go?<br>
+                </p>
+                <p>
+                    Four oh four, four oh four<br>
+                    Let’s spin around and look once more<br>
+                </p>
+                <p>
+                    Let’s spin around and look once more...<br>
+                    There was nothing here, <br>
+                    but we found it, didn’t we?<br>
+                </p>
+            </div>
         </div>
     </div>
     <audio id="audio404" src="sound/FourOhFour.mp3"></audio>
@@ -212,9 +408,25 @@
                 playBtn.src = "img/play.svg";
                 isPlaying = false;
             });
-        });
 
+            //LYRICボタンで歌詞展開
+            const lyricBtn = document.querySelector('.lyric-wrap a');
+            const lyricText = document.querySelector('.lyric-text');
+
+            lyricBtn.addEventListener('click', function (e) {
+                e.preventDefault(); // aタグのデフォルト遷移を無効化
+
+                // display: none/blockをトグル
+                if (lyricText.style.display === 'none' || lyricText.style.display === '') {
+                    lyricText.style.display = 'block';
+                } else {
+                    lyricText.style.display = 'none';
+                }
+            });
+
+        }); // ←この「});」が最後に必要
     </script>
+
 </body>
 
 </html>
