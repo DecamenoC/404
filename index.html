@@ -184,7 +184,7 @@
         /* 歌詞ボタンテストゾーン */
 
         .lyric-wrap {
-            margin-top: 1rem;
+            margin: 1rem auto 0;
         }
 
         .lyric-wrap a {
@@ -210,8 +210,19 @@
             top: 2px;
             left: 2px;
             bottom: 2px;
-            width: 50%;
-            background: rgba(255, 255, 255, 0.05);
+            width: 48%;
+            background: rgba(255, 158, 120, 0.08);
+
+        }
+
+        .lyric-wrap a:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            bottom: 2px;
+            width: 48%;
+            background: rgba(175, 212, 247, 0.08);
         }
 
         .lyric-wrap a span:nth-child(1) {
@@ -220,7 +231,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(to right, #F9F2E4, #dbd8d1);
+            background: linear-gradient(to right, #F9F2E4, rgba(255, 158, 120, 0.5));
             animation: animate1 linear 3.2s infinite;
         }
 
@@ -241,7 +252,7 @@
             right: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(to bottom, #F9F2E4, #dbd8d1);
+            background: linear-gradient(to bottom, #F9F2E4, rgba(175, 212, 247, 0.8));
             animation: animate2 linear 3.2s infinite;
         }
 
@@ -262,7 +273,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(to left, #F9F2E4, #dbd8d1);
+            background: linear-gradient(to left, #F9F2E4, rgba(175, 212, 247, 0.8));
             animation: animate3 linear 3.2s infinite;
         }
 
@@ -282,7 +293,7 @@
             left: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(to top, #F9F2E4, #dbd8d1);
+            background: linear-gradient(to top, #F9F2E4, rgba(255, 158, 120, 0.5));
             animation: animate4 linear 3.2s infinite;
         }
 
@@ -305,12 +316,13 @@
             color: #2E2E2E;
             font-size: 1rem;
             line-height: 1.2;
-            background: #fff6;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 18px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
             padding: 18px 24px;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
             text-align: center;
-            /* ←中央揃え */
         }
 
         .lyric-text .lyric-title {
@@ -346,7 +358,7 @@
                 <span></span>
                 Lyric
             </a>
-            <div class="lyric-text" style="">
+            <div class="lyric-text">
                 <div class="lyric-title">404</div>
                 <p>
                     Four oh four, four oh four<br>
@@ -400,7 +412,7 @@
 
     <!-- html終わり -->
 
-    <script>
+    <script type="module">
         document.addEventListener('DOMContentLoaded', function () {
             const playBtn = document.querySelector('.play-btn');
             const vinyl = document.querySelector('.vinyl');
@@ -447,7 +459,7 @@
                 }
             });
 
-        }); // ←この「});」が最後に必要
+        });
     </script>
 
 </body>
